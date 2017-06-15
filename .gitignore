@@ -103,3 +103,4 @@ ENV/
 output/*
 *.sql
 .idea
+.DS_Store
