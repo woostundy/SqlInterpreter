@@ -58,7 +58,7 @@ class SQLFileParser(object):
                     length = type_info.group(2)
                 else:
                     # 没长度时的情况
-                    _type, length = column_info[1], ''
+                    _type, length = type_info, ''
 
                 # 列备注
                 column_comment_result = re.match(r'.*?COMMENT \'(.*?)\'.*?', column_line.strip())

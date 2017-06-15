@@ -3,8 +3,7 @@ import argparse
 import os
 
 from parser.sql_file_parser import SQLFileParser
-from generator.py_entity import gen_py_entity
-from generator.markdown import gen_md
+from generator import gen_py_entity, gen_md
 
 
 def init_args():
