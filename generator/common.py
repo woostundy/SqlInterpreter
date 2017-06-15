@@ -1,5 +1,22 @@
 # -*- coding: utf-8 -*-
 
+import os
+
+PASS_KEY = [
+    'id',
+    'created',
+    'modified',
+]
+
+
+def mk_dir(db_name, dir_name):
+    if not os.path.exists('output/' + db_name):
+        os.mkdir('output/' + db_name)
+    pth = os.path.join('output', db_name, dir_name)
+    if not os.path.exists(pth):
+        os.mkdir(pth)
+    return pth
+
 
 def underline_to_camel(underline_format, need_plural=True):
     """
