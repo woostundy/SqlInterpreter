@@ -20,6 +20,19 @@ Database type support list:
 
 How to use：
 
-`python interpreter.py -f database.sql`
+`python interpreter.py -f sample.sql`
 
 Type `python interpreter.py -h` for more params detail info
+
+
+sample screenshot:
+
+Markdown
+![Markdown Doc][1]
+
+Python Entity
+![Python Entity][2]
+
+
+  [1]: http://7xlizz.com1.z0.glb.clouddn.com/699B4817-1284-494D-9F50-098B439BD115.png
+  [2]: http://7xlizz.com1.z0.glb.clouddn.com/ADF7C484-2F10-48A3-9871-984E11A8EEB6.png
