@@ -17,3 +17,9 @@ SQLInterpreter 输入.sql文件或者数据库连接，输出数据库文档或�
 
 - [x] MySQL
 - [ ] MS SQL SERVER
+
+咋用：
+
+python interpreter.py -f database.sql
+
+更多参数详情见 python interpreter.py -h
