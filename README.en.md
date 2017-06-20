@@ -16,11 +16,12 @@ Input support list:
 Database type support list:
 
 - [x] MySQL
-- [ ] MS SQL SERVER
+- [x] MS SQL SERVER
 
 How to use：
 
 `python interpreter.py -f sample.sql`
+`python interpreter.py -c user:pwd@host/sample_db`
 
 Type `python interpreter.py -h` for more params detail info
 
