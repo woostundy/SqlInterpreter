@@ -4,7 +4,6 @@ import os
 
 PASS_KEY = [
     'id',
-    'no',
     'created',
     'modified',
 ]
@@ -48,3 +47,5 @@ def plural(word):
         return word[:-2]
     elif word.endswith('s'):
         return word[:-1]
+    else:
+        return word
