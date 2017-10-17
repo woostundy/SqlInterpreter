@@ -21,7 +21,7 @@ SQLInterpreter 输入.sql文件或者数据库连接，输出数据库文档或�
 咋用：
 
 `python interpreter.py -f sample.sql`
-`python interpreter.py -c user:pwd@host/sample_db`
+`python interpreter.py -c user:pwd@host/sample_db` -t table_name
 
 更多参数详情见 `python interpreter.py -h`
 

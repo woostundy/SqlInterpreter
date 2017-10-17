@@ -12,6 +12,7 @@ def init_args():
     parser = argparse.ArgumentParser(description='-- SQL Interpreter --',
                                      usage='\ninterpreter -c mysql://user:pwd@host/db -o py'
                                            '\ninterpreter -f sample.py -name sample_db -o md,py'
+                                           '\ninterpreter -f sample.py -name sample_db -o md,py -t table_name'
                                            '\ninterpreter -c user:pwd@host/sample_db')
     method_group = parser.add_mutually_exclusive_group()
     method_group.add_argument('-c', '--connection', help='interpreter by sql connection', dest='connection')
@@ -22,11 +23,13 @@ def init_args():
                         choices=['md', 'py', 'word', 'html'], default=['md', 'py', 'word', 'html'], dest='output')
     parser.add_argument('-name', '--dbname', help='db name, if you don\'t appoint it, it will be the file name',
                         dest='db_name', default=None)
+    parser.add_argument('-t', '--table', help='table name', dest='table_name', default=None)
+
     result = parser.parse_args()
     return result
 
 
-def main(file_path, connection, output, db_name):
+def main(file_path, connection, output, db_name, table_name):
     database = None
     if file_path:
         # 从文件解析DB
@@ -50,7 +53,7 @@ def main(file_path, connection, output, db_name):
         'html': lambda x: 0
     }
     for v in output:
-        output_map[v](database)
+        output_map[v](database, table_name)
 
 
 if __name__ == '__main__':

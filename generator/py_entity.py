@@ -3,14 +3,19 @@ from generator.common import mk_dir, underline_to_camel, plural, PASS_KEY
 from template.entity_template import py_entity
 
 
-def gen_py_entity(database):
+def gen_py_entity(database, table_name=None):
     """
     输出 python的entity代码
     :param database:
+    :param table_name:
     :return:
     """
     pth = mk_dir(database.name, 'py_entity')
     for table in database.tables:
+
+        if table_name is not None and table_name != table.name:
+            continue
+
         doc_string_list = []
         entity_property_list = []
 

@@ -21,7 +21,7 @@ Database type support list:
 How to use：
 
 `python interpreter.py -f sample.sql`
-`python interpreter.py -c user:pwd@host/sample_db`
+`python interpreter.py -c user:pwd@host/sample_db` -t table_name
 
 Type `python interpreter.py -h` for more params detail info
 
