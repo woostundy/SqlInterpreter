@@ -48,9 +48,9 @@ def main(file_path, connection, output, db_name, table_name):
     output_map = {
         # 暂不支持的就返回个0吧。。。
         'py': gen_py_entity,
-        'word': lambda x: 0,
+        'word': lambda x, y: 0,
         'md': gen_md,
-        'html': lambda x: 0
+        'html': lambda x, y: 0
     }
     for v in output:
         output_map[v](database, table_name)
