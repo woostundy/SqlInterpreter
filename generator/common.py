@@ -10,6 +10,8 @@ PASS_KEY = [
 
 
 def mk_dir(db_name, dir_name):
+    if not os.path.exists('output'):
+        os.mkdir('output')
     if not os.path.exists('output/' + db_name):
         os.mkdir('output/' + db_name)
     pth = os.path.join('output', db_name, dir_name)
