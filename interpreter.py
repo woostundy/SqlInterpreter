@@ -6,6 +6,7 @@ from parser.sql_file_parser import SQLFileParser
 from parser.sql_connection_parser import SQLConnectionParser
 from generator.py_entity import gen_py_entity
 from generator.markdown import gen_md
+from generator.sql_model import gen_py_sql_model
 
 
 def init_args():
@@ -20,7 +21,8 @@ def init_args():
     method_group.required = True
 
     parser.add_argument('-o', '--output', help='the files you want to output', nargs='+',
-                        choices=['md', 'py', 'word', 'html'], default=['md', 'py', 'word', 'html'], dest='output')
+                        choices=['md', 'py', 'word', 'html', 'sqlalchemy'], default=['md', 'py', 'word', 'html'],
+                        dest='output')
     parser.add_argument('-name', '--dbname', help='db name, if you don\'t appoint it, it will be the file name',
                         dest='db_name', default=None)
     parser.add_argument('-t', '--table', help='table name', dest='table_name', default=None)
@@ -50,7 +52,8 @@ def main(file_path, connection, output, db_name, table_name):
         'py': gen_py_entity,
         'word': lambda x, y: 0,
         'md': gen_md,
-        'html': lambda x, y: 0
+        'html': lambda x, y: 0,
+        'sqlalchemy': gen_py_sql_model
     }
     for v in output:
         output_map[v](database, table_name)
