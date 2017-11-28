@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from template.markdown_template import table_header_template, md_template
 from generator.common import mk_dir, PASS_KEY
+import os
 
 
 def gen_md(database, table_name=None):
@@ -22,3 +23,4 @@ def gen_md(database, table_name=None):
         md_content += table_section
     with open(pth + '/' + database.name + '.md', 'w') as f:
         f.write(md_content)
+    print 'markdown files have output to ', os.path.abspath('.'), '/output/markdown/'

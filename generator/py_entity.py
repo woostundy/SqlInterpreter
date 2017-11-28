@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from generator.common import mk_dir, underline_to_camel, plural, PASS_KEY
 from template.entity_template import py_entity
+import os
 
 
 def gen_py_entity(database, table_name=None):
@@ -38,3 +39,5 @@ def gen_py_entity(database, table_name=None):
         )
         with open(pth + '/' + plural(table.name) + '.py', 'w') as f:
             f.write(content)
+
+    print 'entity files have output to ', os.path.abspath('.'), '/output/py_entity/'
